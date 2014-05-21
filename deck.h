@@ -7,13 +7,13 @@ class Deck
 public:
     Deck();
     Card deal();
-    void shuffle();
+    void shffl();
     int testSize();
     Card testCard(int n);
 
 private:
     vector<Card> stack;
-    int _nextCardIndex;
+    int _cardsLeft;
 };
 
 #endif // DECK_H

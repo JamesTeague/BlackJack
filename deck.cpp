@@ -1,5 +1,8 @@
 #include "deck.h"
 #include "card.cpp"
+#include <algorithm>
+
+
 using namespace std;
 
 Deck::Deck()
@@ -12,6 +15,20 @@ Deck::Deck()
             stack.push_back(f);
         }
     }
+    _cardsLeft = stack.size();
+}
+
+Card Deck::deal(){
+    int size = stack.size();
+    Card x = stack.at(size-1);
+    stack.pop_back();
+    _cardsLeft = stack.size();
+    stack.resize(_cardsLeft);
+    return x;
+}
+
+void Deck::shffl(){
+
 }
 
 int Deck::testSize() {
