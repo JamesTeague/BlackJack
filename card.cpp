@@ -2,12 +2,14 @@
 #include <string>
 #include <sstream>
 
+using namespace std;
+
 Card::Card(){
     rank = 'A';
     suit = 'S';
 }
 
-Card::Card(char s, char r) {
+Card::Card(char r, char s) {
     suit = s;
     rank = r;
 }
