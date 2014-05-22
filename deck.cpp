@@ -1,6 +1,9 @@
 #include "deck.h"
 #include "card.cpp"
 #include <algorithm>
+#include <ctime>
+#include <cstdlib>
+#include <iostream>
 
 
 using namespace std;
@@ -18,23 +21,28 @@ Deck::Deck()
     _cardsLeft = stack.size();
 }
 
-Card Deck::deal(){
+string Deck::deal(){
     int size = stack.size();
     Card x = stack.at(size-1);
     stack.pop_back();
     _cardsLeft = stack.size();
     stack.resize(_cardsLeft);
-    return x;
+    return x.toString();
 }
 
-void Deck::shffl(){
-
+void Deck::shuffle(){
+    cout << "Shuffling the Deck..." << endl;
+    srand(unsigned (time(0)));
+    random_shuffle(stack.begin(), stack.end());
+//    shuffle(stack.begin(), stack.end(), myRandom());
 }
 
-int Deck::testSize() {
-    return stack.size();
+void Deck::showDeck() const {
+    for (int i=0; i<_cardsLeft; i++){
+        cout << stack.at(i).toString() << endl;
+    }
 }
 
-Card Deck::testCard(int n) {
-    return stack.at(n);
+int Deck::cardsRemaining() const {
+    return _cardsLeft;
 }
