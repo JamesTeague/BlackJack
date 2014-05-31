@@ -14,15 +14,15 @@ public:
     // mutator methods
     void changeWallet(double amount);
     void changeBet(int wager);
-    void changeHandVal(int value);
+    int changeHandVal();
     void getNextCard(Card c);
 
     // accessor methods
-    string getName();
-    double getMoney();
-    double getBet();
-    int getHandVal();
-    void getHand();
+    string getName() const;
+    double getMoney() const;
+    double getBet() const;
+    int getHandVal() const;
+    void getHand() const;
 
 private:
     string name;

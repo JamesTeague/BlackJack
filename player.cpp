@@ -9,23 +9,24 @@ Player::Player() {
     name = "player1";
 }
 
-double Player::getMoney() {
+double Player::getMoney() const {
 	return moneyLeft;
 }
 
-string Player::getName() {
+string Player::getName() const {
 	return name;
 }
 
-double Player::getBet() {
+double Player::getBet() const {
 	return bet;
 }
 
-int Player::getHandVal() {
+int Player::changeHandVal() {
     handValue = 0;
     for (Card c : hand){
         handValue += evalCard(c);
     }
+
     return handValue;
 }
 
@@ -37,8 +38,8 @@ void Player::changeBet(int wager) {
     bet = wager;
 }
 
-void Player::changeHandVal(int value) {
-    handValue = value;
+int Player::getHandVal() const {
+    return handValue;
 }
 
 void Player::getNextCard(Card c) {
@@ -93,7 +94,7 @@ int Player::evalCard(Card c) {
     return value;
 }
 
-void Player::getHand() {
+void Player::getHand() const {
     for (Card c : hand){
         cout << c.toString() << " ";
     }
