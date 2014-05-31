@@ -93,8 +93,6 @@ int Player::evalCard(Card c) {
     return value;
 }
 
-
-//test function
 void Player::getHand() {
     for (Card c : hand){
         cout << c.toString() << " ";

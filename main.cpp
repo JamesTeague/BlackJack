@@ -9,7 +9,6 @@ int main()
     Player p1;
     Card currentCard;
 
-    cout << "Shuffling deck " << endl;
     d.shuffle();
     d.showDeck();
     currentCard = d.deal();
