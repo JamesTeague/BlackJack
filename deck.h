@@ -7,7 +7,7 @@ class Deck
 {
 public:
     Deck();
-    string deal();
+    Card deal();
     void shuffle();
     int cardsRemaining() const;
     void showDeck() const;
