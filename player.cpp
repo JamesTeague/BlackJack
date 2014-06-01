@@ -31,7 +31,7 @@ int Player::changeHandVal() {
 }
 
 void Player::changeWallet(double amount) {
-    moneyLeft = amount;
+    moneyLeft += amount;
 }
 
 void Player::changeBet(int wager) {
