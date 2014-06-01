@@ -21,13 +21,13 @@ Deck::Deck()
     _cardsLeft = stack.size();
 }
 
-string Deck::deal(){
+Card Deck::deal(){
     int size = stack.size();
     Card x = stack.at(size-1);
     stack.pop_back();
     _cardsLeft = stack.size();
     stack.resize(_cardsLeft);
-    return x.toString();
+    return x;
 }
 
 void Deck::shuffle(){
