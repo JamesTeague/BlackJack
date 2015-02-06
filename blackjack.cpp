@@ -12,7 +12,7 @@ void BlackJack::playGame() {
     deck.shuffle();
     dealtCard = deck.deal();
     p1.getNextCard(dealtCard);
-    deck.deal();
+    deck.deal(); //this will be dealers card
     dealtCard = deck.deal();
     p1.getNextCard(dealtCard);
     p1.changeHandVal();
